@@ -9,6 +9,13 @@ books = [
 ]
 
 # Route to get all books
+
+@app.route('/')
+def home():
+    return """Welcome to the book store
+    <br>
+    <a href="/books">Books</a>
+    """
 @app.route('/books', methods=['GET'])
 def get_books():
     return jsonify(books)
